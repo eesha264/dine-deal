@@ -10,7 +10,7 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ value, onChange, onSearch, placeholder = "Search for a restaurant or cafe..." }: SearchBarProps) => {
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       onSearch();
     }
@@ -25,7 +25,7 @@ const SearchBar = ({ value, onChange, onSearch, placeholder = "Search for a rest
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
           className="h-12 pl-10 pr-4 text-base shadow-card focus-visible:shadow-card-hover"
         />
       </div>
